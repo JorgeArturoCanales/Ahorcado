@@ -36,7 +36,6 @@ document.querySelector('#comprobar').addEventListener('click', () => {
             if(palabraAdivinar[i]==letraIngresada){
                 palabraMostrar[i] = letraIngresada;
                 aciertosActuales++;
-                aciertosTotales++;
             }
         }
     
@@ -67,6 +66,7 @@ document.querySelector('#comprobar').addEventListener('click', () => {
                 numIntentos--;
             }else{
                 puntaje+=150;
+                aciertosTotales++;
                 audioAcierto.play().catch(e => console.log(e));
             }
         }else{
