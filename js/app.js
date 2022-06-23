@@ -3,7 +3,7 @@ let palabraAdivinar = [];
 let historialLetrasUsuario = [];
 let numIntentos = 7;
 let palabraMostrar = [];
-let puntaje = 0, aciertosTotales=0;
+let puntaje = 0;
     
 let cantPalabras= listaPalabras.length;
 const posicionPalabraAleatoria = Math.floor((Math.random() * cantPalabras));
@@ -39,12 +39,6 @@ document.querySelector('#comprobar').addEventListener('click', () => {
             }
         }
     
-        /* if(aciertosActuales==0){
-            numIntentos--;
-        }else{
-            audioAcierto.play().catch(e => console.log(e));
-        } */
-                
         let letraRepetidaHistorial=0;
         for (let i = 0; i < historialLetrasUsuario.length-1; i++) {
             if(letraIngresada==historialLetrasUsuario[i]){
@@ -66,7 +60,6 @@ document.querySelector('#comprobar').addEventListener('click', () => {
                 numIntentos--;
             }else{
                 puntaje+=150;
-                aciertosTotales++;
                 audioAcierto.play().catch(e => console.log(e));
             }
         }else{
@@ -131,6 +124,14 @@ document.querySelector('#comprobar').addEventListener('click', () => {
                     
         }
 
+        let aciertosTotales=0;
+        for (let i = 0; i < palabraAdivinar.length; i++) {
+            if(palabraMostrar[i]!='_'){
+                aciertosTotales++;
+                console.log('acierto');
+            }
+        }
+        console.log(aciertosTotales);
         if(aciertosTotales==palabraAdivinar.length){
             audioGanador.play().catch(e => console.log(e));
 
