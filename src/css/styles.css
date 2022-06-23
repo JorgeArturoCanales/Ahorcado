@@ -1,0 +1,14 @@
+.boton{
+    margin-left: 1px;
+    height: 38px;
+    border: 1px solid #007bff;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: #007bff;
+    background-color: #f8f9fa;
+}
+.boton:hover{
+    border: 1px solid #007bff;
+    background-color: #007bff;
+    color: #f8f9fa;
+}
