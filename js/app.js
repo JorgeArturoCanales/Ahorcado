@@ -71,6 +71,7 @@ document.querySelector('#comprobar').addEventListener('click', () => {
             }
         }else{
             puntaje-=150;
+            numIntentos--;
 
             if(puntaje==0 || puntaje==-150){
                 puntaje=0;
