@@ -3,7 +3,7 @@ let palabraAdivinar = [];
 let historialLetrasUsuario = [];
 let numIntentos = 7;
 let palabraMostrar = [];
-let puntaje = 0, aciertos=0;
+let puntaje = 0, aciertosTotales=0;
     
 let cantPalabras= listaPalabras.length;
 const posicionPalabraAleatoria = Math.floor((Math.random() * cantPalabras));
@@ -31,15 +31,16 @@ document.querySelector('#comprobar').addEventListener('click', () => {
         historialLetrasUsuario.push(letraIngresada);
         let flag=0;    
                 
-    
+        let aciertosActuales = 0;
         for (let i = 0; i < palabraAdivinar.length; i++) {
             if(palabraAdivinar[i]==letraIngresada){
                 palabraMostrar[i] = letraIngresada;
-                aciertos++;
+                aciertosActuales++;
+                aciertosTotales++;
             }
         }
     
-        if(aciertos==0){
+        if(aciertosActuales==0){
             numIntentos--;
         }else{
             audioAcierto.play().catch(e => console.log(e));
@@ -128,7 +129,7 @@ document.querySelector('#comprobar').addEventListener('click', () => {
                     
         }
 
-        if(aciertos==palabraAdivinar.length){
+        if(aciertosTotales==palabraAdivinar.length){
             audioGanador.play().catch(e => console.log(e));
 
             Swal.fire({
