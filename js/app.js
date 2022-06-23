@@ -40,11 +40,11 @@ document.querySelector('#comprobar').addEventListener('click', () => {
             }
         }
     
-        if(aciertosActuales==0){
+        /* if(aciertosActuales==0){
             numIntentos--;
         }else{
             audioAcierto.play().catch(e => console.log(e));
-        }
+        } */
                 
         let letraRepetidaHistorial=0;
         for (let i = 0; i < historialLetrasUsuario.length-1; i++) {
@@ -67,6 +67,7 @@ document.querySelector('#comprobar').addEventListener('click', () => {
                 numIntentos--;
             }else{
                 puntaje+=150;
+                audioAcierto.play().catch(e => console.log(e));
             }
         }else{
             puntaje-=150;
